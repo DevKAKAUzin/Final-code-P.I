@@ -95,16 +95,18 @@
   
               // Obtém os valores dos campos nome e idade
               var nome = $("#nome").val();
-              var idade = $("#idade").val();
-              var nomeMae = $("#nomeMae").val();
+              var dependentes = $("#dependentes").val();
+              var moradores = $("#moradores").val();
+              var filhos = $("#filhos").val();
   
               var tabelaBody = $("#tabela tbody");
 
               // Cria uma nova linha e adiciona células a ela
               var novaLinha = $("<tr>")
                   .append($("<td>").text(nome))
-                  .append($("<td>").text(idade))
-                  .append($("<td>").text(nomeMae));
+                  .append($("<td>").text(dependentes))
+                  .append($("<td>").text(moradores))
+                  .append($("<td>").text(filhos));
   
               // Adiciona a nova linha ao corpo da tabela
               tabelaBody.append(novaLinha);
@@ -117,20 +119,80 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <center>
+    <div style="border: 1px solid black; padding: 8px; margin: 8px;">
+        <h1>  Econo+ </h1>
+        <h2>Nos ajude a realizar uma pesquisa de perfil financeiro</h2>
+        <h4>A Lei Geral de Proteção de Dados  - nº 13.709, de 14 de agosto de 2018 dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.</h4>
+    </div>
+    <hr>
+    <div style="border: 2px solid black; padding: 8px; margin: 8px;">
+             
   <div>
     <form id="meuFormulario">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-  
-      <label for="idade">Idade:</label>
-      <input type="number" id="idade" name="idade" required>
-  
-  
-      <label for="nomeMae">Nome da Mãe:</label>
-      <input type="text" id="nomeMae" name="nomeMae" required>
-  
+      <label for="nome">Se confortavel, informe o seu nome:</label>
+      <input type="text" id="nome" name="nome" >
+  <p></p>
+      <label for="dependentes">Quantidades de dependentes:</label>
+      <input type="number" id="dependentes" name="depentendes"  required>
+  <p></p>
+  <label for="dependentes">Quantas pessoas moram na sua casa?</label>
+  <input type="number" id="moradores" name="moradores"  required>
+  <fieldset>
+  <legend> Grau de escolaridade:<legend>
+    <label for="serie">Série:</label>
+    <select name="serie" id="serie">
+        <optgroup label="Serie">
+          <option value="infantil">Infantil</option>
+          <option value="fundamental 1">Fundamental 1 ( 1° ao 5° ano)</option>
+          <option value="fundamental 2">Fundamental 2 (6° ao 9°)</option>
+          <option value="ensino medio">Ensino medio incompleto</option>
+          <option value="ensino medio">Ensino medio completo</option>
+          <option value="ensino medio">Ensino Superior</option>
+        </optgroup>
+      </select>
+      </fieldset>
+  <hr>
+  <fieldset>
+    <legend> Sexo:<legend>
+      <label for="Sexo">Sexo:</label>
+      <select name="Sexo" id="Sexo">
+          <optgroup label="Sexo">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro/Prefiro não informar">Outro/Prefiro não informarFeminino</option>
+          </optgroup>
+        </select>
+        </fieldset>
+    <p></p>
+
+    <fieldset>
+      <legend> Possui filhos?:<legend>
+
+    <input type="radio" name="filhos" value="sim">
+    <label for="filhos_sim">Sim</label>
+    <input type="radio" name="filhos" value="nao">
+    <label for="filhos_nao">Não</label>
+      </fieldset>
+      <hr>
+
+      <fieldset>
+        <legend> Estado civil:<legend>
+          <label for="civil">Estado civil:</label>
+          <select name="civil" id="civil">
+              <optgroup label="Estado civil">
+                <option value="Solteiro(a)">Solteiro(a)</option>
+                <option value="Casado(a)">Casado(a)</option>
+                <option value="Divorciado(a)">Divorciado(a)</option>
+                <option value="Viuvo(a)">Viuvo(a)</option>
+              </optgroup>
+            </select>
+            </fieldset>
+            <p></p>
+  </center>
+    <center>
       <button type="submit">Enviar</button>
+    </center>
   </form>
   </div>
 
@@ -140,14 +202,15 @@
       <table id="tabela">
         <tr>
           <th>Nome</th>
-          <th>Idade</th>
-          <th>Onde Nasceu</th>
+          <th>dependentes</th>
+          <th>moradores</th>
+          <th>filhos</th>
+
         </tr>
-    
       </table>
       <spam/>
-
-      <a href="#" class="export">Exporta alunos</a>
+      
+      <a href="#" class="export">Exportar alunos</a>
     </div>
 
 </body>
