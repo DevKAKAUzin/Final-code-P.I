@@ -94,28 +94,78 @@
               event.preventDefault();
   
               // Obtém os valores dos campos nome e idade
-              var nome = $("#nome").val();
-              var dependentes = $("#dependentes").val();
-              var moradores = $("#moradores").val();
-              var filhos = $("#filhos").val();
-  
-              var tabelaBody = $("#tabela tbody");
+          var nome = $("#nome").val();
+          var dependentes = $("#dependentes").val();
+          var moradores = $("#moradores").val();
+          var filhos = $("input[name='filhos']:checked").val();
+          var serie = $("#serie").val();
+          var Gênero = $("#Gênero").val();
+          var estadoCivil = $("#civil").val();
+          var grauEscolaridade = $("#serie").val();
+          var saudeFinanceira = $("input[name='saudeFinanceira']:checked").val();
+          var conscienciaGastos = $("input[name='conscienciaGastos']:checked").val();
+          var rendaExtra = $("#rendaExtra").val();
+          var reservaEmergencia = $("input[name='reservaEmergencia']:checked").val();
+          var tipoComercio = $("#tipoComercio").val();
+          var controlaGastosComercio = $("input[name='controlaGastosComercio']:checked").val();
+          var qtdCartoesCredito = $("input[name='qtdCartoesCredito']:checked").val();
+          var divida = $("input[name='divida']:checked").val();
+          var gastos = $("input[name='gastos[]']:checked").map(function () {
+            return this.value;
+          }).get().join(", ");
+          var formasPagamento = $("input[name='formas-pagamento[]']:checked").map(function () {
+            return this.value;
+          }).get().join(", ");
+          var rendaFixa = $("#rendaFixa").val();
+
+          var tabelaBody = $("#tabela tbody");
 
               // Cria uma nova linha e adiciona células a ela
               var novaLinha = $("<tr>")
-                  .append($("<td>").text(nome))
-                  .append($("<td>").text(dependentes))
-                  .append($("<td>").text(moradores))
-                  .append($("<td>").text(filhos));
+
+            .append($("<td>").text(nome))
+            .append($("<td>").text(dependentes))
+            .append($("<td>").text(moradores))
+            .append($("<td>").text(filhos))
+            .append($("<td>").text(serie))
+            .append($("<td>").text(Gênero))
+            .append($("<td>").text(estadoCivil))
+            .append($("<td>").text(grauEscolaridade))
+            .append($("<td>").text(saudeFinanceira))
+            .append($("<td>").text(conscienciaGastos))
+            .append($("<td>").text(rendaExtra))
+            .append($("<td>").text(reservaEmergencia))
+            .append($("<td>").text(tipoComercio))
+            .append($("<td>").text(controlaGastosComercio))
+            .append($("<td>").text(qtdCartoesCredito))
+            .append($("<td>").text(divida))
+            .append($("<td>").text(gastos))
+            .append($("<td>").text(formasPagamento))
+            .append($("<td>").text(rendaFixa));
+
   
               // Adiciona a nova linha ao corpo da tabela
               tabelaBody.append(novaLinha);
           });
       });
 
-        
+
       });
 </script>
+<style>
+  button{
+    font-size:1.2em;
+    background: rgb(12, 12, 10);
+    border: 0;
+    margin-bottom: 6em;
+    color: rgb(201, 244, 62);
+    padding: 0.1em 0.6em;
+    box-shadow: 2px 2px 2px black;
+    text-shadow: 1px 1px 1px black;
+
+
+  }
+</style>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -126,18 +176,25 @@
         <h4>A Lei Geral de Proteção de Dados  - nº 13.709, de 14 de agosto de 2018 dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.</h4>
     </div>
     <hr>
-    <div style="border: 2px solid black; padding: 8px; margin: 8px;">
+    <div style="border: 1px solid black; padding: 8px; margin: 8px;">
              
   <div>
     <form id="meuFormulario">
       <label for="nome">Se confortavel, informe o seu nome:</label>
       <input type="text" id="nome" name="nome" >
   <p></p>
-      <label for="dependentes">Quantidades de dependentes:</label>
-      <input type="number" id="dependentes" name="depentendes"  required>
+</center>
+  <fieldset>
+    <legend> Quantidade de dependes: </legend>
+      <label for="dependentes">Dependentes:</label>
+      <input type="number" id="dependentes" name="depentendes"  >
+  </fieldset>
   <p></p>
-  <label for="dependentes">Quantas pessoas moram na sua casa?</label>
+  <fieldset>
+    <legend>Quantas pessoas moram na sua casa?</legend>
+  <label for="dependentes">Quantidade de pessoas:</label>
   <input type="number" id="moradores" name="moradores"  required>
+  </fieldset>
   <fieldset>
   <legend> Grau de escolaridade:<legend>
     <label for="serie">Série:</label>
@@ -154,10 +211,10 @@
       </fieldset>
   <hr>
   <fieldset>
-    <legend> Sexo:<legend>
-      <label for="Sexo">Sexo:</label>
-      <select name="Sexo" id="Sexo">
-          <optgroup label="Sexo">
+    <legend> Gênero:<legend>
+      <label for="Gênero">Gênero:</label>
+      <select name="Gênero" id="Gênero">
+          <optgroup label="Gênero">
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
             <option value="Outro/Prefiro não informar">Outro/Prefiro não informarFeminino</option>
@@ -167,7 +224,7 @@
     <p></p>
 
     <fieldset>
-      <legend> Possui filhos?:<legend>
+      <legend> Possui filhos?<legend>
 
     <input type="radio" name="filhos" value="sim">
     <label for="filhos_sim">Sim</label>
@@ -189,7 +246,147 @@
             </select>
             </fieldset>
             <p></p>
-  </center>
+
+  <p></p>
+  <fieldset>
+    <legend>Quantas pessoas moram na sua casa? </legend>
+  <label for="moradores"> Numero de pessoas</label>
+  <input type="number" id="moradores" name="moradores" required>
+</fieldset>
+  <p></p>
+  <fieldset>
+    <legend>Qual a sua renda fixa?</legend>
+  <label for="rendaFixa">renda fixa?</label>
+  <input type="number" id="rendaFixa" name="rendaFixa" required>
+</fieldset>
+
+  <p></p>
+  <fieldset>
+  <legend>Você faz algum tipo de investimento?</legend>
+  <label for="investimento">Tipo de investimento:</label> <br>
+    <input type="checkbox" name="investimento" value="Poupança"> 
+    <label for="investimento_poupanca">Poupança</label><br>
+    <input type="checkbox" name="investimento" value="CDB">
+    <label for="investimento_cdb">CDB</label><br>
+    <input type="checkbox" name="investimento" value="Ações">
+    <label for="investimento_acoes">Ações</label><br>
+
+    <!-- Adicione mais opções de investimento conforme necessário -->
+  </fieldset>
+  <p></p>
+  <fieldset>
+  <p></p>
+  <legend>Como você se avalia em termos de saúde financeira? </legend>
+  <label for="saudeFinanceira"></label>
+    <input type="radio" name="saudeFinanceira" value="Ruim">
+    <label for="saudeFinanceira_ruim">Ruim</label> 
+    <input type="radio" name="saudeFinanceira" value="Regular">
+    <label for="saudeFinanceira_regular">Regular</label>
+    <input type="radio" name="saudeFinanceira" value="Bom">
+    <label for="saudeFinanceira_bom">Bom</label>
+  </fieldset>
+  <p></p>
+  <fieldset>
+  <legend>Você tem consciência dos gastos mensais?</legend>
+  <label for="conscienciaGastos"></label>
+    <input type="radio" name="conscienciaGastos" value="Sim">
+    <label for="conscienciaGastos_sim">Sim</label>
+    <input type="radio" name="conscienciaGastos" value="Não">
+    <label for="conscienciaGastos_nao">Não</label>
+  </fieldset>
+  <p></p>
+  <fieldset>
+    <legend>Você possui alguma renda extra como revenda de revistas, ou outros tipos de vendas?</legend>
+  <label for="rendaExtra"></label>
+  <input type="text" id="rendaExtra" name="rendaExtra">
+  </fieldset>
+  <p></p>
+  <fieldset>
+    <legend> Você possui uma reserva financeira de emergência?</legend>
+  <label for="reservaEmergencia"></label>
+
+    <input type="radio" name="reservaEmergencia" value="Sim">
+    <label for="reservaEmergencia_sim">Sim</label>
+    <input type="radio" name="reservaEmergencia" value="Não">
+    <label for="reservaEmergencia_nao">Não</label>
+  </fieldset>
+  <p></p>
+  <fieldset>
+  <legend>Qual tipo de comércio você atua?</legend>
+  <label for="tipoComercio">Tipo de comércio:</label>
+  <input type="text" id="tipoComercio" name="tipoComercio">
+  <p></p>
+
+</fieldset>
+<p></p>
+<fieldset>
+<legend>Você controla os gastos do seu comércio (entrada e saída)? </legend>
+  <label for="controlaGastosComercio">Gastos do seu comércio:</label>
+    <input type="radio" name="controlaGastosComercio" value="Sim">
+    <label for="controlaGastosComercio_sim">Sim</label>
+    <input type="radio" name="controlaGastosComercio" value="Não">
+    <label for="controlaGastosComercio_nao">Não</label>
+  </fieldset>
+  <p></p>
+
+  <fieldset>
+    <legend> Você possui quantos cartões de crédito? </legend>
+  <label for="qtdCartoesCredito">Numero de cartões de crédito:</label>
+
+    <input type="radio" name="qtdCartoesCredito" value="0">
+    <label for="qtdCartoesCredito_0">0</label>
+    <input type="radio" name="qtdCartoesCredito" value="1-2">
+    <label for="qtdCartoesCredito_1-2">1 a 2</label>
+    <input type="radio" name="qtdCartoesCredito" value="3-5">
+    <label for="qtdCartoesCredito_3-5">3 a 5</label>
+    <input type="radio" name="qtdCartoesCredito" value="6-9">
+    <label for="qtdCartoesCredito_6-9">6 a 9</label>
+    <input type="radio" name="qtdCartoesCredito" value="Mais de 10">
+    <label for="qtdCartoesCredito_mais10">Mais de 10</label>
+  </fieldset>
+  <p></p>
+
+
+  <fieldset>
+    <legend> Você possui alguma dívida pendente? </legend>
+  <label for="divida"></label>
+<input type="radio" name="divida" id="divida-sim" value="sim">
+<label for="divida-sim">Sim</label>
+<input type="radio" name="divida" id="divida-nao" value="nao">
+<label for="divida-nao">Não</label>
+</fieldset>
+<p></p>
+
+<fieldset>
+  <legend>Você normalmente gasta muito com... </legend>
+  <label for="gastos"></label>
+<input type="checkbox" name="gastos[]" id="gastos-compras-online" value="compras-online">
+<label for="gastos-compras-online">Compras online</label> <br>
+<input type="checkbox" name="gastos[]" id="gastos-festas" value="festas">
+<label for="gastos-festas">Festas</label><br>
+<input type="checkbox" name="gastos[]" id="gastos-viagens" value="viagens">
+<label for="gastos-viagens">Viagens</label><br>
+<input type="checkbox" name="gastos[]" id="gastos-comida" value="comida">
+<label for="gastos-comida">Comida</label><br>
+<input type="checkbox" name="gastos[]" id="gastos-jogos" value="jogos">
+<label for="gastos-jogos">Jogos</label><br>
+<input type="checkbox" name="gastos[]" id="gastos-outros" value="outros">
+<label for="gastos-outros">Outros</label><br>
+
+</fieldset>
+<p></p>
+<fieldset>
+  <legend> Seu estabelecimento aceita quais formas de pagamentos: </legend>
+  <label for="formas-pagamento"></label><br>
+<input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-debito" value="debito">
+<label for="formas-pagamento-debito">Débito</label><br>
+<input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-credito" value="credito">
+<label for="formas-pagamento-credito">Crédito</label><br>
+<input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-pix" value="pix">
+<label for="formas-pagamento-pix">Pix</label><br>
+
+</fieldset>
+<p></p>
     <center>
       <button type="submit">Enviar</button>
     </center>
@@ -201,16 +398,28 @@
     <div id="dvData">
       <table id="tabela">
         <tr>
-          <th>Nome</th>
-          <th>dependentes</th>
-          <th>moradores</th>
-          <th>filhos</th>
-
-        </tr>
+          
+          <th>dependentes </th>
+          <th>moradores</th> 
+          <th> filhos</th> 
+          <th> serie </th>
+          <th>Gênero</th>
+          <th>estadoCivil</th>
+          <th>grauEscolaridade</th>
+          <th>saudeFinanceira </th>
+          <th>conscienciaGastos</th>
+          <th>rendaExtra </th>
+          <th>reservaEmergencia</th>
+          <th>tipoComercio </th>
+          <th>controlaGastosComercio</th> 
+          <th>qtdCartoesCredito</th>
+          <th>divida </th>
+          <th>gastos</th>
       </table>
       <spam/>
       
       <a href="#" class="export">Exportar alunos</a>
     </div>
-
+  
+</body>
 </body>
