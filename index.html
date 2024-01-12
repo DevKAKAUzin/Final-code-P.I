@@ -291,11 +291,16 @@
   <input type="checkbox" name="investimento" value="Caderneta de Poupança"> 
   <label for="investimento_poupanca">Caderneta de Poupança</label><br>
   <input type="checkbox" name="investimento" value="CLI">
-  <label for="investimento_cli">Letra de Crédito Imobiliário (CLI)</label><br>
-  <input type="checkbox" name="investimento" value="LCA">
-  <label for="investimento_lca">Letra de Crédito do Agricultor (LCA)</label><br>
+  <label for="investimento_cli">Letra de Crédito Imobiliário (LCI)</label><br>
   <input type="checkbox" name="investimento" value="CDB">
   <label for="investimento_cdb">Certificado de Depósito Bancário (CDB)</label><br>
+  <input type="checkbox" name="investimento" value="Tesouro direto">
+  <label for="investimento_Tesourodireto">Tesouro direto</label><br>
+  <input type="checkbox" name="investimento" value="Fundos imobiliarios">
+  <label for="investimento_fundos">Fundos Imobiliarios</label><br>
+  <input type="checkbox" name="investimento" value="Ações">
+  <label for="investimento_Ações">Ações</label><br>
+
   <input type="checkbox" name="investimento" value="Outros">
   <label for="investimento_outros">Outros</label><br>
   
@@ -388,13 +393,24 @@
   <fieldset>
     <legend> Você possui alguma dívida pendente? </legend>
   <label for="divida"></label>
-<input type="radio" name="divida" id="divida-sim" value="sim">
-<label for="divida-sim">Sim</label>
-<input type="radio" name="divida" id="divida-nao" value="nao">
-<label for="divida-nao">Não</label>
+  <select id="divida" name="divida" required>
+    <option value="1">500-1000</option>
+    <option value="2">1000-5000</option>
+    <option value="3">5000-10000</option>
+    <option value="4">10000+</option>
+  </select>
 </fieldset>
 <p></p>
 
+<fieldset>
+  <legend>Você costuma controlar seus impulsos ao sentir vontade de comprar?</legend>
+  <label for="Impulsos"></label>
+  <input type="radio" name="Impulsos" value="Sim">
+  <label for="Impulsos_sim">Sim</label>
+  <input type="radio" name="Impulsos" value="Não">
+  <label for="Impulsos_nao">Não</label>
+</fieldset>
+<p></p>
 <fieldset>
   <legend>Você normalmente gasta muito com... </legend>
   <label for="gastos"></label>
@@ -413,9 +429,11 @@
 
 </fieldset>
 <p></p>
+
+
 <fieldset>
   <legend> Seu estabelecimento aceita quais formas de pagamentos: </legend>
-  <label for="formas-pagamento"></label><br>
+  <label for="formas-pagmento"></label><br>
 <input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-debito" value="debito">
 <label for="formas-pagamento-debito">Débito</label><br>
 <input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-credito" value="credito">
