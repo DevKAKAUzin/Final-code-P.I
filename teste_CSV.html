@@ -185,16 +185,22 @@
   <p></p>
 </center>
   <fieldset>
-    <legend> Quantidade de dependes: </legend>
-      <label for="dependentes">Dependentes:</label>
-      <input type="number" id="dependentes" name="depentendes"  >
+    <legend> Quantidade de dependes (incluindo filhos): </legend>
+      <label for="dependentes"> Dependentes: </label>  
+      <select id="dependentes" name="dependentes" >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10+">10</option>
+      </select>
   </fieldset>
   <p></p>
-  <fieldset>
-    <legend>Quantas pessoas moram na sua casa?</legend>
-  <label for="dependentes">Quantidade de pessoas:</label>
-  <input type="number" id="moradores" name="moradores"  required>
-  </fieldset>
   <fieldset>
   <legend> Grau de escolaridade:<legend>
     <label for="serie">Série:</label>
@@ -222,17 +228,6 @@
         </select>
         </fieldset>
     <p></p>
-
-    <fieldset>
-      <legend> Possui filhos?<legend>
-
-    <input type="radio" name="filhos" value="sim">
-    <label for="filhos_sim">Sim</label>
-    <input type="radio" name="filhos" value="nao">
-    <label for="filhos_nao">Não</label>
-      </fieldset>
-      <hr>
-
       <fieldset>
         <legend> Estado civil:<legend>
           <label for="civil">Estado civil:</label>
@@ -250,26 +245,60 @@
   <p></p>
   <fieldset>
     <legend>Quantas pessoas moram na sua casa? </legend>
-  <label for="moradores"> Numero de pessoas</label>
-  <input type="number" id="moradores" name="moradores" required>
+    <label for="moradores">Número de pessoas:</label>
+    <select id="moradores" name="moradores" required>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10+">10</option>
+    </select>
+    
 </fieldset>
+
   <p></p>
-  <fieldset>
+
+ <fieldset>
     <legend>Qual a sua renda fixa?</legend>
-  <label for="rendaFixa">renda fixa?</label>
-  <input type="number" id="rendaFixa" name="rendaFixa" required>
+    <label>
+        <input type="radio" name="rendaFixa" value="1 Salário mínimo" required>
+        1 Salário mínimo
+    </label><br>
+    <label>
+        <input type="radio" name="rendaFixa" value="2 - 3 Salários mínimos">
+        2 - 3 Salários mínimos
+    </label><br>
+    <label>
+        <input type="radio" name="rendaFixa" value="3 - 5 Salários mínimos">
+        3 - 5 Salários mínimos
+    </label><br>
+    <label>
+        <input type="radio" name="rendaFixa" value="Mais de 6 Salários mínimos">
+        Mais de 6 Salários mínimos
+    </label><br>
 </fieldset>
+
 
   <p></p>
   <fieldset>
   <legend>Você faz algum tipo de investimento?</legend>
-  <label for="investimento">Tipo de investimento:</label> <br>
-    <input type="checkbox" name="investimento" value="Poupança"> 
-    <label for="investimento_poupanca">Poupança</label><br>
-    <input type="checkbox" name="investimento" value="CDB">
-    <label for="investimento_cdb">CDB</label><br>
-    <input type="checkbox" name="investimento" value="Ações">
-    <label for="investimento_acoes">Ações</label><br>
+  <label for="tipo_investimento">Tipo de investimento:</label> <br>
+  <input type="checkbox" name="investimento" value="Caderneta de Poupança"> 
+  <label for="investimento_poupanca">Caderneta de Poupança</label><br>
+  <input type="checkbox" name="investimento" value="CLI">
+  <label for="investimento_cli">Letra de Crédito Imobiliário (CLI)</label><br>
+  <input type="checkbox" name="investimento" value="LCA">
+  <label for="investimento_lca">Letra de Crédito do Agricultor (LCA)</label><br>
+  <input type="checkbox" name="investimento" value="CDB">
+  <label for="investimento_cdb">Certificado de Depósito Bancário (CDB)</label><br>
+  <input type="checkbox" name="investimento" value="Outros">
+  <label for="investimento_outros">Outros</label><br>
+  
 <!--oiiii-->
     <!-- Adicione mais opções de investimento conforme necessário -->
   </fieldset>
@@ -287,7 +316,7 @@
   </fieldset>
   <p></p>
   <fieldset>
-  <legend>Você tem consciência dos gastos mensais?</legend>
+  <legend>Você tem planejamento dos seus gastos?</legend>
   <label for="conscienciaGastos"></label>
     <input type="radio" name="conscienciaGastos" value="Sim">
     <label for="conscienciaGastos_sim">Sim</label>
@@ -302,7 +331,7 @@
   </fieldset>
   <p></p>
   <fieldset>
-    <legend> Você possui uma reserva financeira de emergência?</legend>
+    <legend> Você possui uma renda extra, como revendas, entre outros?</legend>
   <label for="reservaEmergencia"></label>
 
     <input type="radio" name="reservaEmergencia" value="Sim">
@@ -310,17 +339,26 @@
     <input type="radio" name="reservaEmergencia" value="Não">
     <label for="reservaEmergencia_nao">Não</label>
   </fieldset>
+
   <p></p>
+
   <fieldset>
   <legend>Qual tipo de comércio você atua?</legend>
-  <label for="tipoComercio">Tipo de comércio:</label>
-  <input type="text" id="tipoComercio" name="tipoComercio">
+  <label for="tipoComercio">Tipo de comércio:</label> <br>
+  <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Roupas">
+  <label for="tipoComercio">Roupas</label> <br>
+  <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Calçados">
+  <label for="tipoComercio">Calçados</label> <br>
+  <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Eletronicos">
+  <label for="tipoComercio">Eletronicos</label> <br>
+  <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Outros">
+  <label for="tipoComercio">Outros</label> <br>
   <p></p>
 
 </fieldset>
 <p></p>
 <fieldset>
-<legend>Você controla os gastos do seu comércio (entrada e saída)? </legend>
+<legend>Você controla os gastos do seu comércio como entrada e saída de mercadorias? </legend>
   <label for="controlaGastosComercio">Gastos do seu comércio:</label>
     <input type="radio" name="controlaGastosComercio" value="Sim">
     <label for="controlaGastosComercio_sim">Sim</label>
@@ -334,7 +372,7 @@
   <label for="qtdCartoesCredito">Numero de cartões de crédito:</label>
 
     <input type="radio" name="qtdCartoesCredito" value="0">
-    <label for="qtdCartoesCredito_0">0</label>
+    <label for="qtdCartoesCredito_0">Não possuo</label>
     <input type="radio" name="qtdCartoesCredito" value="1-2">
     <label for="qtdCartoesCredito_1-2">1 a 2</label>
     <input type="radio" name="qtdCartoesCredito" value="3-5">
