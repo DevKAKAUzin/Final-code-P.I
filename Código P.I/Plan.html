@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário Econo+</title>
+    <style>
+        img {
+            border-radius: 50%;
+        }
+
+        body {
+            background-image: linear-gradient(to right, #ecc85be5, #dbb14b);
+            padding: 15px;
+        }
+
+        button {
+            font-size: 15px;
+            padding: 6px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            background-color: #ecc75b; 
+            color: black; 
+            border: 2px solid #04AA6D;
+        }
+
+        button:hover {
+            background-color: #04AA6D;
+            color: white;
+        }
+        
+        #myForm {
+            max-width: 400px; /* Largura máxima do contêiner do formulário */
+            margin: 50px auto; /* Centralizar o contêiner na página */
+            padding: 20px; /* Espaçamento interno dentro do contêiner do formulário */
+            border-radius: 10px; /* Borda arredondada do contêiner do formulário */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+            /* Adiciona desfoque ao fundo */
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.5);
+
+            /* Adiciona imagem de fundo com opacidade de 15% */
+            background-image: url('sua-imagem.jpg'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.85; /* Opacidade de 85% (15% opaco) */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+
+</head>
+<body>
+    <center><img src="Design sem nome.jpg" alt="Design" height="150" width="150"></center>
+
+   <center> <form id="myForm" onsubmit="enviarFormulario(); return false;">
+        <!-- Put HTML input fields in here and see how they fill up your sheet -->
+        <h1>Formulário Econo+</h1>
+     
+        <p><label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"></p> 
+
+        <p><label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome"></p> 
+
+        <p><label for="email">Email:</label>
+        <input type="email" id="email" name="email"></p> 
+        
+        <p><label for="numero">Numero:</label>
+            <input type="tel" id="tel" name="numero"></p>
+        
+    </form>
+        <p>
+            <button type="submit">Enviar Formulário</button>
+        </p></center>
+
+    <script>
+        function enviarFormulario() {
+            // Lógica para enviar o formulário (se necessário)
+
+            // Pop-up de confirmação (substitua esta linha pela sua lógica)
+            alert("Formulário enviado com sucesso!");
+
+            // Limpar os campos de input
+            document.getElementById("myForm").reset();
+        }
+    </script>
+</body>
+</html>
