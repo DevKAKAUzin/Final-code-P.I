@@ -95,6 +95,8 @@
   
               // Obtém os valores dos campos nome e idade
           var nome = $("#nome").val();
+          var email = $("#email").val();
+          var telefone = $("telefone").val();
           var dependentes = $("#dependentes").val();
           var moradores = $("#moradores").val();
           var filhos = $("input[name='filhos']:checked").val();
@@ -107,6 +109,7 @@
           var rendaExtra = $("#rendaExtra").val();
           var reservaEmergencia = $("input[name='reservaEmergencia']:checked").val();
           var tipoComercio = $("#tipoComercio").val();
+          var Impulsos=$("#tipoComercio").val();
           var controlaGastosComercio = $("input[name='controlaGastosComercio']:checked").val();
           var qtdCartoesCredito = $("input[name='qtdCartoesCredito']:checked").val();
           var divida = $("input[name='divida']:checked").val();
@@ -124,6 +127,8 @@
               var novaLinha = $("<tr>")
 
             .append($("<td>").text(nome))
+            .append($("<td>").text(email))
+            .append($("<td>").text(telefone))
             .append($("<td>").text(dependentes))
             .append($("<td>").text(moradores))
             .append($("<td>").text(filhos))
@@ -134,6 +139,7 @@
             .append($("<td>").text(saudeFinanceira))
             .append($("<td>").text(conscienciaGastos))
             .append($("<td>").text(rendaExtra))
+            .append($("<td>").text(Impulsos))
             .append($("<td>").text(reservaEmergencia))
             .append($("<td>").text(tipoComercio))
             .append($("<td>").text(controlaGastosComercio))
@@ -164,9 +170,23 @@
     text-shadow: 1px 1px 1px black;
 
 
+    /* Estilo base para dispositivos com tela grande */
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+
+    /* Media query para dispositivos de tela menor (exemplo: smartphones) */
+    @media only screen and (max-width: 600px) {
+      .container {
+        width: 100%;
+        padding: 10px;
+      }
+    }
   }
 </style>
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
   <center>
@@ -180,10 +200,15 @@
              
   <div>
     <form id="meuFormulario">
+      <h2>Campo não obrigatório</h2>
       <label for="nome">Caso confortavel, informe o seu nome:</label>
-      <input type="text" id="nome" name="nome" >
-      <label for="Telefone"></label>
-  <p></p>
+      <input type="text" id="nome" name="nome" > <br>
+      <label for="Telefone">Caso confortavel, informe o seu telefone</label>
+      <input type="tel" id="telefone" name="telefone"> <br>
+      <label for="Email">Caso confortavel, informe o seu E-mail:</label>
+      <input type="email" id="email" name="email"> <br>
+      </form>
+      </div>
 </center>
   <fieldset>
     <legend> Quantidade de dependes (incluindo filhos): </legend>
@@ -333,13 +358,16 @@
   <fieldset>
     <legend>Você possui alguma renda extra como revenda de revistas, ou outros tipos de vendas?</legend>
   <label for="rendaExtra"></label>
-  <input type="text" id="rendaExtra" name="rendaExtra">
+  <input type="radio" id="rendaExtra" name="rendaExtra" value="sim">
+  <label for="rendaExtra_sim">Sim</label>
+  <input type="radio" id="rendaExtra" name="rendaExtra" value="não"
+  <label for="rendaExtra_não">Não</label>
+
   </fieldset>
   <p></p>
   <fieldset>
     <legend> Você possui uma renda extra, como revendas, entre outros?</legend>
   <label for="reservaEmergencia"></label>
-
     <input type="radio" name="reservaEmergencia" value="Sim">
     <label for="reservaEmergencia_sim">Sim</label>
     <input type="radio" name="reservaEmergencia" value="Não">
@@ -472,6 +500,12 @@
           <th>qtdCartoesCredito</th>
           <th>divida </th>
           <th>gastos</th>
+          <th>telefone</th>
+          <th>email</th>
+          <th>Impulsos</th>
+          <th>formasPagamento</th>
+          
+
       </table>
       <spam/>
       
