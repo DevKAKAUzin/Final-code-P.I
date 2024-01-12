@@ -1,6 +1,3 @@
-
-
-
 const handleSubmit = (event) => {
     event.preventDefault();
     
@@ -16,7 +13,7 @@ const handleSubmit = (event) => {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({name, email, sobrenome , numero}),
+    body: JSON.stringify({name, email, sobrenome, numero }),
     }).then(()=> alert('dados salvos'));
     }
     
