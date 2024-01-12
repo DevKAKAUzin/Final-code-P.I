@@ -33,19 +33,15 @@
         #myForm {
             max-width: 400px; /* Largura máxima do contêiner do formulário */
             margin: 50px auto; /* Centralizar o contêiner na página */
+            background-color: #ffffff23; /* Cor de fundo do contêiner do formulário */
             padding: 20px; /* Espaçamento interno dentro do contêiner do formulário */
             border-radius: 10px; /* Borda arredondada do contêiner do formulário */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 
             /* Adiciona desfoque ao fundo */
             backdrop-filter: blur(10px);
+            /* Fallback para navegadores que não suportam backdrop-filter */
             background-color: rgba(255, 255, 255, 0.5);
-
-            /* Adiciona imagem de fundo com opacidade de 15% */
-            background-image: url('sua-imagem.jpg'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.85; /* Opacidade de 85% (15% opaco) */
         }
 
         label {
@@ -73,11 +69,11 @@
         
         <p><label for="numero">Numero:</label>
             <input type="tel" id="tel" name="numero"></p>
-        
+       
     </form>
-        <p>
-            <button type="submit">Enviar Formulário</button>
-        </p></center>
+    <form id="myFormbuttom" onsubmit="enviarFormulario(); return false;"> <p>
+        <button type="submit">Enviar Formulário</button>
+    </p></form></center>
 
     <script>
         function enviarFormulario() {
