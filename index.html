@@ -6,13 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
 <style> 
-img{
+#Logo_econo{
   border: 1px solid #ddd;
   border-radius: 500px;
   padding: 5px;
   width: 150px;
 
 }
+#Marcar_final{
+  padding: 0%;
+}
+
+
 
 form {
   max-width: 400px;
@@ -26,8 +31,9 @@ form {
 
         body {
             background-image: url(fundo\ Site\ .png);
-            padding: 100px;
-            text-align: left
+            background-size: contain;
+            padding: 10px;
+            text-align: center;   
             
         }
 
@@ -36,7 +42,7 @@ form {
             padding: 6px 12px;
             border-radius: 12px;
             cursor: pointer;
-            background-color: #e9daad; 
+            background-color: #f6eccf; 
             color: black; 
             border: 2px solid #04AA6D;
         }
@@ -67,10 +73,11 @@ form {
       </style>
 </head>
 <body>
-<h1>Formulário de Perguntas</h1>
+<br><br>
 <form action="https://api.sheetmonkey.io/form/4YmoR5EYr2xLxj3ec6VjHs" method="post" target="_blank">
   
-  <img src="Design sem nome.png" alt="Design" height="150" width="150">
+  <img id= "Logo_econo" src="Design sem nome.png" alt="Design" height="150" width="150">
+  
   <h1>Formulário Econo+</H1>
       <center>
           <div style="border: 1px solid black; padding: 8px; margin: 8px;">
@@ -94,7 +101,7 @@ form {
       </center><br>
         <fieldset>
           <legend> Quantidade de dependentes (incluindo filhos): </legend>
-            <label for="dependentes"> Dependentes: </label>  
+            <label for="dependentes"></label>  
             <select id="dependentes" name="dependentes" >
               <option value="0">Não possuo</option>
               <option value="1">1</option>
@@ -159,7 +166,7 @@ form {
         <p></p>
         <fieldset>
           <legend>Quantas pessoas moram na sua casa? </legend>
-          <label for="moradores">Número de pessoas:</label>
+          <label for="moradores"></label>
           <select id="moradores" name="moradores" required>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -197,7 +204,7 @@ form {
         <p></p>
         <fieldset>
         <legend>Você faz algum tipo de investimento?</legend>
-        <label for="tipo_investimento">Tipo de investimento:</label> <br>
+        <label for="tipo_investimento"></label> <br>
         <input type="checkbox" name="investimento" value="Caderneta de Poupança"> 
         <label for="investimento_poupanca">Caderneta de Poupança</label><br>
         <input type="checkbox" name="investimento" value="CLI">
@@ -261,7 +268,7 @@ form {
       
         <fieldset>
         <legend>Qual tipo de comércio você atua?</legend>
-        <label for="tipoComercio">Tipo de comércio:</label> <br>
+        <label for="tipoComercio"></label> <br>
         <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Roupas">
         <label for="tipoComercio">Roupas</label> <br>
         <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Calçados">
@@ -276,7 +283,7 @@ form {
       <p></p>
       <fieldset>
       <legend>Você controla os gastos do seu comércio como entrada e saída de mercadorias? </legend>
-        <label for="controlaGastosComercio">Gastos do seu comércio:</label>
+        <label for="controlaGastosComercio"></label>
           <input type="radio" name="controlaGastosComercio" value="Sim">
           <label for="controlaGastosComercio_sim">Sim</label>
           <input type="radio" name="controlaGastosComercio" value="Não">
@@ -286,7 +293,7 @@ form {
       
         <fieldset>
           <legend> Você possui quantos cartões de crédito? </legend>
-        <label for="qtdCartoesCredito">Numero de cartões de crédito:</label>
+        <label for="qtdCartoesCredito"></label>
       
           <input type="radio" name="qtdCartoesCredito" value="0">
           <label for="qtdCartoesCredito_0">Não possuo</label>
@@ -356,14 +363,16 @@ form {
       <input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-Avista" value="Avista">
       <label for="formas-pagamento-Avista">Dinheiro</label><br>
       
-
+      </fieldset>
+      <br><br>
 
 
   <button type="submit">Enviar</button>
-      
-  
 
 </form>
+<background-image>
+  <img id="Marca final" src="Logo_econo+-removebg-preview.png" alt="Marca" height="450" width="450">
+</background-image>
 
 </body>
 </html>
