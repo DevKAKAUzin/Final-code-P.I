@@ -7,3 +7,20 @@ a.export:visited {
   border: 1px solid #ccc;
   padding: 8px;
 }
+
+/*qiiiii*/
+button{
+            
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  
+}
