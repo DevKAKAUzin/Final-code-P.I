@@ -16,7 +16,17 @@
 #Marcar_final{
   padding: 0%;
 }
-
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+fieldset{
+  border-radius: 10px;
+}
 
 
 form {
@@ -51,6 +61,9 @@ form {
             background-color: #04AA6D;
             color: white;
         }
+        div{
+          border-radius: 10px;
+        }
         
         #myForm {
             max-width: 400px; /* Largura máxima do contêiner do formulário */
@@ -74,7 +87,7 @@ form {
 </head>
 <body>
 <br><br>
-<form action="https://api.sheetmonkey.io/form/4YmoR5EYr2xLxj3ec6VjHs" method="post" target="_blank">
+<form id="Econo+" action="https://api.sheetmonkey.io/form/4YmoR5EYr2xLxj3ec6VjHs" method="post" target="_blank" >
   
   <img id= "Logo_econo" src="Design sem nome.png" alt="Design" height="150" width="150">
   
@@ -85,7 +98,8 @@ form {
               <h2>Nos ajude a realizar uma pesquisa de perfil financeiro</h2>
               <h4>A Lei Geral de Proteção de Dados  - nº 13.709, de 14 de agosto de 2018 dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.</h4>
           </div>
-          <hr>
+          <br>
+          
           <div style="border: 1px solid black; padding: 8px; margin: 8px;">
                    
         <div>
@@ -96,7 +110,7 @@ form {
             <label for="Telefone">Caso confortavel, informe o seu telefone</label>
             <input type="tel" id="telefone" name="telefone"> <br>
             <label for="Email">Caso confortavel, informe o seu E-mail:</label>
-            <input type="email" id="email" name="email"> <br>
+            <input type="email" id="email" name="email"> <br><br>
             </div>
       </center><br>
         <fieldset>
@@ -106,7 +120,7 @@ form {
             min = "0">
         </fieldset>
         <p></p>
-        <fieldset><br>
+        <fieldset>
           <legend> Grau de escolaridade:<legend>
           <label for="serie"></label>
             <select name="serie" id="serie">
@@ -124,7 +138,7 @@ form {
                 </optgroup>
             </select>
             </fieldset>
-        <hr>
+      <br>
         <fieldset>
           <Legend>Gênero:</Legend>
             <label for="Gênero"></label>
@@ -185,7 +199,7 @@ form {
           </label><br>
           <label>
               <input type="radio" name="rendaFixa" value="4260">
-              Em torno de Salários mínimos
+              Em torno de 3 Salários mínimos
           </label><br>
           <label>
             <input type="radio" name="rendaFixa" value="5680">
@@ -203,26 +217,48 @@ form {
       
       
         <p></p>
-        <fieldset>
+        <fieldset id="investFild">
         <legend>Você faz algum tipo de investimento?</legend>
-        <label for="tipo_investimento"></label> <br>
-        <input type="checkbox" name="investimento" value="Não investe"> 
-        <label for="investimento_poupanca">Não faço nenhum tipo de investimento</label><br>
+        <label for="tipo_investimento"></label> <br> 
+
+        <label for="investimento_poupanca"> 
+        <input type="checkbox" name="investimento" value="Não investe">
+        Não faço nenhum tipo de investimento</label><br>
+
+       
+        <label for="investimento_poupanca"> 
         <input type="checkbox" name="investimento" value="Caderneta de Poupança"> 
-        <label for="investimento_poupanca">Caderneta de Poupança</label><br>
+        Caderneta de Poupança</label><br>
+
+        
+        <label for="investimento_cli">
         <input type="checkbox" name="investimento" value="CLI">
-        <label for="investimento_cli">Letra de Crédito Imobiliário (LCI)</label><br>
+        Letra de Crédito Imobiliário (LCI)</label><br>
+
+        
+        <label for="investimento_cdb">
         <input type="checkbox" name="investimento" value="CDB">
-        <label for="investimento_cdb">Certificado de Depósito Bancário (CDB)</label><br>
+        Certificado de Depósito Bancário (CDB)</label><br>
+
+        
+        <label for="investimento_Tesourodireto">
         <input type="checkbox" name="investimento" value="Tesouro direto">
-        <label for="investimento_Tesourodireto">Tesouro direto</label><br>
+        Tesouro direto</label><br>
+
+        
+        <label for="investimento_fundos">
         <input type="checkbox" name="investimento" value="Fundos imobiliarios">
-        <label for="investimento_fundos">Fundos Imobiliários</label><br>
+        Fundos Imobiliários</label><br>
+        
+        
+        <label for="investimento_Ações">
         <input type="checkbox" name="investimento" value="Ações">
-        <label for="investimento_Ações">Ações</label><br>
+        Ações</label><br>
       
+        
+        <label for="investimento_outros">
         <input type="checkbox" name="investimento" value="Outros">
-        <label for="investimento_outros">Outros</label><br>
+        Outros</label><br>
         
       <!--oiiii-->
           <!-- Adicione mais opções de investimento conforme necessário -->
@@ -241,7 +277,7 @@ form {
         </fieldset>
         <p></p>
         <fieldset>
-        <legend>Você tem planejamento dos seus gastos?</legend>
+        <legend>Você tem planejamento dos seus gastos pessoais?</legend>
         <label for="conscienciaGastos"></label>
           <input type="radio" name="conscienciaGastos" value="Sim">
           <label for="conscienciaGastos_sim">Sim</label>
@@ -272,27 +308,18 @@ form {
         <fieldset>
         <legend>Qual tipo de comércio você atua?</legend>
         <label for="tipoComercio"></label> <br>
-        <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Roupas">
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Roupas">
         <label for="tipoComercio">Roupas</label> <br>
-        <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Calçados">
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Calçados">
         <label for="tipoComercio">Calçados</label> <br>
-        <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Eletronicos">
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Eletronicos">
         <label for="tipoComercio">Eletronicos</label> <br>
-        <input type="checkbox" id="tipoComercio" name="tipoComercio" value="Outros">
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Outros">
         <label for="tipoComercio">Outros</label> <br>
         <p></p>
       
       </fieldset>
       <p></p>
-      <fieldset>
-      <legend>Você controla os gastos do seu comércio como entrada e saída de mercadorias? </legend>
-        <label for="controlaGastosComercio"></label>
-          <input type="radio" name="controlaGastosComercio" value="Sim">
-          <label for="controlaGastosComercio_sim">Sim</label>
-          <input type="radio" name="controlaGastosComercio" value="Não">
-          <label for="controlaGastosComercio_nao">Não</label>
-        </fieldset>
-        <p></p>
       
         <fieldset>
           <legend> Você possui quantos cartões de crédito? </legend>
@@ -327,17 +354,17 @@ form {
       <fieldset>
         <legend>Você normalmente gasta muito com... </legend>
         <label for="gastos"></label>
-      <input type="checkbox" name="gastos[]" id="gastos-compras-online" value="compras-online">
+      <input type="radio" name="gastos[]" id="gastos-compras-online" value="compras-online">
       <label for="gastos-compras-online">Compras online</label> <br>
-      <input type="checkbox" name="gastos[]" id="gastos-festas" value="festas">
+      <input type="radio" name="gastos[]" id="gastos-festas" value="festas">
       <label for="gastos-festas">Festas</label><br>
-      <input type="checkbox" name="gastos[]" id="gastos-viagens" value="viagens">
+      <input type="radio" name="gastos[]" id="gastos-viagens" value="viagens">
       <label for="gastos-viagens">Viagens</label><br>
-      <input type="checkbox" name="gastos[]" id="gastos-comida" value="comida">
+      <input type="radio" name="gastos[]" id="gastos-comida" value="comida">
       <label for="gastos-comida">Comida</label><br>
-      <input type="checkbox" name="gastos[]" id="gastos-jogos" value="jogos">
+      <input type="radio" name="gastos[]" id="gastos-jogos" value="jogos">
       <label for="gastos-jogos">Jogos</label><br>
-      <input type="checkbox" name="gastos[]" id="gastos-outros" value="outros">
+      <input type="radio" name="gastos[]" id="gastos-outros" value="outros">
       <label for="gastos-outros">Outros</label><br>
       
       </fieldset>
@@ -345,16 +372,16 @@ form {
       
       
       <fieldset>
-        <legend> Seu estabelecimento aceita quais formas de pagamentos: </legend>
+        <legend> Quais formas de pagamento você mais costuma usar? </legend>
         <label for="formas-pagmento"></label><br>
-      <input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-debito" value="debito">
-      <label for="formas-pagamento-debito">Cartão de Débito</label><br>
-      <input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-credito" value="credito">
-      <label for="formas-pagamento-credito">Cartão de Crédito</label><br>
-      <input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-pix" value="pix">
-      <label for="formas-pagamento-pix">Pix</label><br>
-      <input type="checkbox" name="formas-pagamento[]" id="formas-pagamento-Avista" value="Avista">
-      <label for="formas-pagamento-Avista">Dinheiro</label><br>
+      <input type="radio" name="formas-pagamento[]" id="formas-pagamento-debito" value="debito">
+      <label for="formas-pagamento">Cartão de Débito</label><br>
+      <input type="radio" name="formas-pagamento[]" id="formas-pagamento-credito" value="credito">
+      <label for="formas-pagamento">Cartão de Crédito</label><br>
+      <input type="radio" name="formas-pagamento[]" id="formas-pagamento-pix" value="pix">
+      <label for="formas-pagamento">Pix</label><br>
+      <input type="radio" name="formas-pagamento[]" id="formas-pagamento-Avista" value="Avista">
+      <label for="formas-pagamento">Dinheiro</label><br>
       
       </fieldset>
       <br><br>
@@ -363,6 +390,11 @@ form {
   <button type="submit">Enviar</button>
 
 </form>
+<script>
+  function enviarFormulário(){
+    document.getElementById("Econo+")
+  }
+</script>
 <background-image>
   <img id="Marca final" src="Logo_econo+-removebg-preview.png" alt="Marca" height="450" width="450">
 </background-image>
