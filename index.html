@@ -109,10 +109,10 @@ form {
             <input type="text" id="nome" name="nome" > <br>
             <label for="Telefone">Caso confortavel, informe o seu telefone</label>
             <input type="tel" id="telefone" name="telefone"> <br>
-            <label for="Email">Caso confortavel, informe o seu E-mail:</label>
+            <label for="Email">Caso confortavel, informe o seu e-mail:</label>
             <input type="email" id="email" name="email"> <br>
             <label for="idade">Caso confortavel, informe o sua idade:</label>
-            <input type="idade" id="idade" name="idade"> <br><br>
+            <input type="idade" id="idade" name="idade" size="1"> <br><br>
             </div>
       </center><br>
         <fieldset>
@@ -361,23 +361,23 @@ form {
         <input type="radio" name="Impulsos" value="Não">
         <label for="Impulsos_nao">Não</label>
         <input type="radio" name="Impulsos" value="As vezes">
-        <label for="Impulsos_as_vezes">As vezes</label>
+        <label for="Impulsos_as_vezes">Às vezes</label>
       </fieldset>
       <p></p>
       <fieldset>
-        <legend>Você normalmente gasta muito com... </legend>
+        <legend>Com qual destes ítens você gasta mais? </legend>
         <label for="gastos"></label>
-      <input type="radio" name="gastos[]" id="gastos-compras-online" value="compras-online">
+      <input type="checkbox" name="gastos[]" id="gastos-compras-online" value="compras-online">
       <label for="gastos-compras-online">Compras online</label> <br>
-      <input type="radio" name="gastos[]" id="gastos-festas" value="festas">
+      <input type="checkbox" name="gastos[]" id="gastos-festas" value="festas">
       <label for="gastos-festas">Festas</label><br>
-      <input type="radio" name="gastos[]" id="gastos-viagens" value="viagens">
+      <input type="checkbox" name="gastos[]" id="gastos-viagens" value="viagens">
       <label for="gastos-viagens">Viagens</label><br>
-      <input type="radio" name="gastos[]" id="gastos-comida" value="comida">
+      <input type="checkbox" name="gastos[]" id="gastos-comida" value="comida">
       <label for="gastos-comida">Comida</label><br>
-      <input type="radio" name="gastos[]" id="gastos-jogos" value="jogos">
+      <input type="checkbox" name="gastos[]" id="gastos-jogos" value="jogos">
       <label for="gastos-jogos">Jogos</label><br>
-      <input type="radio" name="gastos[]" id="gastos-outros" value="outros">
+      <input type="checkbox" name="gastos[]" id="gastos-outros" value="outros">
       <label for="gastos-outros">Outros</label><br>
       
       </fieldset>
