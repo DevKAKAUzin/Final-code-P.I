@@ -110,7 +110,9 @@ form {
             <label for="Telefone">Caso confortavel, informe o seu telefone</label>
             <input type="tel" id="telefone" name="telefone"> <br>
             <label for="Email">Caso confortavel, informe o seu E-mail:</label>
-            <input type="email" id="email" name="email"> <br><br>
+            <input type="email" id="email" name="email"> <br>
+            <label for="idade">Caso confortavel, informe o sua idade:</label>
+            <input type="idade" id="idade" name="idade"> <br><br>
             </div>
       </center><br>
         <fieldset>
@@ -129,12 +131,12 @@ form {
                   <option value="infantil">Infantil</option>
                   <option value="fundamental 1">Fundamental 1 (1° ao 5°ano)</option>
                   <option value="fundamental 2">Fundamental 2 (6° ao 9°ano)</option>
-                  <option value="ensino medioIN">Ensino medio incompleto</option>
-                  <option value="ensino medioCO">Ensino medio completo</option>
-                  <option value="ensino tecnicoIN">Ensino técnico incompleto</option>
-                  <option value="ensino tecnicoCO">Ensino técnico completo</option>
-                  <option value="ensino superiorIN">Ensino Superior incompleto</option>
-                  <option value="ensino superiorCO">Ensino Superior Completo</option>
+                  <option value="ensino medio IN.">Ensino medio incompleto</option>
+                  <option value="ensino medio CO.">Ensino medio completo</option>
+                  <option value="ensino tecnico IN.">Ensino técnico incompleto</option>
+                  <option value="ensino tecnico CO.">Ensino técnico completo</option>
+                  <option value="ensino superior IN.">Ensino Superior incompleto</option>
+                  <option value="ensino superior CO.">Ensino Superior Completo</option>
                 </optgroup>
             </select>
             </fieldset>
@@ -181,7 +183,7 @@ form {
         <p></p>
       
        <fieldset>
-          <legend>Qual a sua renda fixa mensal aproximadamente?</legend>
+          <legend>Qual a sua renda mensal aproximadamente?</legend>
 
           <label>
             
@@ -285,15 +287,7 @@ form {
           <label for="conscienciaGastos_nao">Não</label>
         </fieldset>
         <p></p>
-        <fieldset>
-          <legend>Você possui uma renda extra, como revendas, entre outros?</legend>
-        <label for="rendaExtra"></label>
-        <input type="radio" id="rendaExtra" name="rendaExtra" value="sim">
-        <label for="rendaExtra_sim">Sim</label>
-        <input type="radio" id="rendaExtra" name="rendaExtra" value="não">
-        <label for="rendaExtra_não">Não</label>
-        </fieldset>
-        <p></p>
+      
         <fieldset>
           <legend> Você possui alguma reserva finaceira de emergencia?</legend>
         <label for="reservaEmergencia"></label>
@@ -306,14 +300,18 @@ form {
         <p></p>
       
         <fieldset>
-        <legend>Qual tipo de comércio você atua?</legend>
+        <legend>Qual setor você atua?</legend>
         <label for="tipoComercio"></label> <br>
-        <input type="radio" id="tipoComercio" name="tipoComercio" value="Roupas">
-        <label for="tipoComercio">Roupas</label> <br>
-        <input type="radio" id="tipoComercio" name="tipoComercio" value="Calçados">
-        <label for="tipoComercio">Calçados</label> <br>
-        <input type="radio" id="tipoComercio" name="tipoComercio" value="Eletronicos">
-        <label for="tipoComercio">Eletronicos</label> <br>
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Comercio">
+        <label for="tipoComercio">Comercio</label> <br>
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Saúde">
+        <label for="tipoComercio">Saúde</label> <br>
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Administrativo">
+        <label for="tipoComercio">Administrativo</label> <br>
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Jovem Aprendiz">
+        <label for="tipoComercio">Jovem Aprendiz</label> <br>
+        <input type="radio" id="tipoComercio" name="tipoComercio" value="Educação">
+        <label for="tipoComercio">Educação</label> <br>
         <input type="radio" id="tipoComercio" name="tipoComercio" value="Outros">
         <label for="tipoComercio">Outros</label> <br>
         <p></p>
@@ -331,8 +329,21 @@ form {
           
         </fieldset>
         <p></p>
-      
-      
+        <fieldset>
+          <legend> Quais formas de pagamento você mais costuma usar? </legend>
+          <label for="formas-pagmento"></label><br>
+        <input type="radio" name="formas-pagamento[]" id="formas-pagamento-debito" value="debito">
+        <label for="formas-pagamento">Cartão de Débito</label><br>
+        <input type="radio" name="formas-pagamento[]" id="formas-pagamento-credito" value="credito">
+        <label for="formas-pagamento">Cartão de Crédito</label><br>
+        <input type="radio" name="formas-pagamento[]" id="formas-pagamento-pix" value="pix">
+        <label for="formas-pagamento">Pix</label><br>
+        <input type="radio" name="formas-pagamento[]" id="formas-pagamento-Avista" value="Avista">
+        <label for="formas-pagamento">Dinheiro</label><br>
+        
+        </fieldset>
+        <p></p>
+
         <fieldset>
           <legend> Você gostaria de compartilhar uma estimativa do valor total de suas dividas?</legend>
         <label for="divida"></label>
@@ -349,6 +360,8 @@ form {
         <label for="Impulsos_sim">Sim</label>
         <input type="radio" name="Impulsos" value="Não">
         <label for="Impulsos_nao">Não</label>
+        <input type="radio" name="Impulsos" value="As vezes">
+        <label for="Impulsos_as_vezes">As vezes</label>
       </fieldset>
       <p></p>
       <fieldset>
@@ -368,22 +381,8 @@ form {
       <label for="gastos-outros">Outros</label><br>
       
       </fieldset>
-      <p></p>
+     
       
-      
-      <fieldset>
-        <legend> Quais formas de pagamento você mais costuma usar? </legend>
-        <label for="formas-pagmento"></label><br>
-      <input type="radio" name="formas-pagamento[]" id="formas-pagamento-debito" value="debito">
-      <label for="formas-pagamento">Cartão de Débito</label><br>
-      <input type="radio" name="formas-pagamento[]" id="formas-pagamento-credito" value="credito">
-      <label for="formas-pagamento">Cartão de Crédito</label><br>
-      <input type="radio" name="formas-pagamento[]" id="formas-pagamento-pix" value="pix">
-      <label for="formas-pagamento">Pix</label><br>
-      <input type="radio" name="formas-pagamento[]" id="formas-pagamento-Avista" value="Avista">
-      <label for="formas-pagamento">Dinheiro</label><br>
-      
-      </fieldset>
       <br><br>
 
 
