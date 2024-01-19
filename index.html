@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,21 +86,55 @@ form {
 </head>
 <body>
 <br><br>
-<form id="Econo+" action="https://api.sheetmonkey.io/form/4YmoR5EYr2xLxj3ec6VjHs" method="post" target="_blank" >
+<form id="Econo+" action="https://api.sheetmonkey.io/form/4YmoR5EYr2xLxj3ec6VjHs" method="post">
+  <!-- Seus campos de formulário aqui -->
+
+
+<script>
+document.getElementById('Econo+').addEventListener('submit', function(event) {
+  event.preventDefault(); // Impede o envio padrão do formulário
   
-  <img id= "Logo_econo" src="Design sem nome.png" alt="Design" height="150" width="150">
+  // Aqui você pode adicionar uma chamada AJAX para enviar os dados do formulário
+  // Por exemplo, usando o objeto FormData e a API Fetch:
+  var formData = new FormData(this);
+  
+  fetch(this.action, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      // Se o envio foi bem-sucedido, resete o formulário
+      this.reset();
+      // Ou redirecione a página para si mesma para recarregar
+      // window.location.href = window.location.href;
+      document.getElementById('confirmationPopup').style.display = 'flex';
+    } else {
+      // Trate erros de resposta aqui
+      alert('Ocorreu um erro ao enviar o formulário.');
+    }
+  })
+  .catch(error => {
+    // Trate erros de rede aqui
+    alert('Formulario enviado.');
+  });
+});
+</script>
+
+  
+  <img id= "Logo_econo" src="Design sem nome (1).png" alt="Design" height="150" width="150">
   
   <h1>Formulário Econo+</H1>
       <center>
           <div style="border: 1px solid black; padding: 8px; margin: 8px;">
               
-              <h2>TESTE...Nos ajude a realizar uma pesquisa de perfil financeiro</h2>
+              <h2>Nos ajude a realizar uma pesquisa de perfil financeiro</h2>
               <h4>A Lei Geral de Proteção de Dados  - nº 13.709, de 14 de agosto de 2018 dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.</h4>
           </div>
           <br>
           
           <div style="border: 1px solid black; padding: 8px; margin: 8px;">
-                <br><br><br>   
+                   
         <div>
           
             <h2>Campo não obrigatório</h2>
@@ -115,6 +148,18 @@ form {
             <input type="idade" id="idade" name="idade" size="1"> <br><br>
             </div>
       </center><br>
+      <fieldset>
+        <Legend>Você é:</Legend>
+          <label for="Pessoa"></label>
+          <select name="pessoa" id="Pessoa">
+              <optgroup label="Tipo Pessoa">
+                <option value="jurídica">Microempreendedor</option>
+                <option value="Fisica">Funcionário</option>
+                
+              </optgroup>
+            </select>
+            </fieldset>
+            <br>
         <fieldset>
           <legend> Quantidade de dependentes (incluindo filhos): </legend>
             <label for="dependentes"></label>  
@@ -389,15 +434,10 @@ form {
   <button type="submit">Enviar</button>
 
 </form>
-<script>
-  function enviarFormulário(){
-    document.getElementById("Econo+")
-  }
-</script>
+
 <background-image>
   <img id="Marca final" src="Logo_econo+-removebg-preview.png" alt="Marca" height="450" width="450">
 </background-image>
 
 </body>
 </html>
-
